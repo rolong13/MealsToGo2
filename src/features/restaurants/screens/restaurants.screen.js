@@ -1,15 +1,16 @@
 import React from "react";
-import styled from "styled-components";
 import { Searchbar } from "react-native-paper";
-import { SafeAreaView, StatusBar } from "react-native";
-import { RestaurantInfoCard } from "../components/reastaurant-info-card.component";
+import { StatusBar, StyleSheet, SafeAreaView, Text, View } from "react-native";
+import styled from "styled-components/native";
+
+import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
-  margintop: ${StatusBar.currentHeight}px;
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
 `;
 
-const SearchContainter = styled.View`
+const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
@@ -18,11 +19,11 @@ const RestaurantListContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-export const RestaurantScreen = () => (
+export const RestaurantsScreen = () => (
   <SafeArea>
-    <SearchContainter>
+    <SearchContainer>
       <Searchbar />
-    </SearchContainter>
+    </SearchContainer>
     <RestaurantListContainer>
       <RestaurantInfoCard />
     </RestaurantListContainer>
