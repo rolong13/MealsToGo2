@@ -13,9 +13,11 @@ const RestaurantStack = createStackNavigator();
 export const RestaurantsNavigator = () => {
     return (
         <RestaurantStack.Navigator
-            headerMode="none"
+            headeShown="false"
             screenOptions={{
                 ...TransitionPresets.ModalPresentationIOS,
+                activeTintColor: "tomato",
+                inactiveTintColor: "gray",
             }}
         >
             <RestaurantStack.Screen
